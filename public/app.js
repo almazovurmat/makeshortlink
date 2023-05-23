@@ -25,8 +25,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const idData   = document.querySelector("#id");
 
     const responseData = await getJsonDataApp(idData.value);
+    console.log(responseData.data);
     labelGet.innerText = responseData.status === 200 ? "JSON:" : "Error:";
-    jsText.innerText   = responseData.status === 200 ? (responseData.data || "No data available") : "";
+    jsText.innerText   = responseData.status === 200 ? (JSON.stringify(responseData.data) || "No data available") : "";
     getError.innerText = responseData.status === 200 ? "" : (responseData.data && responseData.data.message) || "Unknown error occurred";
   });
 
