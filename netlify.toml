@@ -1,0 +1,26 @@
+[build]
+  command = ""
+  publish = "public/"
+
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/get/*"
+  to = "/.netlify/functions/get"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "/generate"
+  to = "/.netlify/functions/post"
+  status = 200
+  force = true

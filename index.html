@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Api Node JS</title>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+
+  <style>
+    .button {
+      display: inline-block;
+      padding: 3px 7px;
+      border: 1px solid #121111;
+      margin-top: 7px;
+      cursor: pointer;
+    }
+
+    .command {
+      display: flex;
+      padding-top: 5px;
+    }
+
+    .answer {
+      padding-top: 15px;
+      padding-left: 15px;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    .resultText {
+      color: rgb(5, 72, 5);
+      font-weight: 700;
+    }
+
+    .error {
+      color: rgb(255, 0, 0);
+      font-weight: 700;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h2>Api Node JS — api для генерации коротких ссылок к json данным, хранящимся в базе данных.</h2>
+
+  <p> <i>/generate</i>
+    — <b>POST запрос</b>.
+    На сервер передается json объект, сохраняется в базе, в ответ возвращается уникальная строка: <i>{id}</i>.
+  </p>
+
+  <label>Введите данные в формате json (ключ: значение).</label><br>
+  <textarea class="json_data" cols="50" rows="10">{" name": "Denis" , "profession" : "developer" }
+    </textarea>
+  <br>
+  <div class="command">
+    <div class="button post">Отправить post запрос </div>
+    <div class="answer labelPost"> </div>
+    <div class="answer IdText resultText"> </div>
+    <div class="answer error postError"> </div>
+  </div>
+
+  <p>
+    <i>/get/{id}</i>
+    — <b>GET запрос</b>.
+    Проверяем, есть ли в базе с таким <i>{id}</i> json объект, если есть то возвращаем его.
+  </p>
+  <label>Введите <i>{id}</i> .</label><br>
+  <input type="text" placeholder="id" id="id"><br>
+  <div class="command">
+    <div class="get button">Отправить get запрос</div>
+    <div class="answer labelGet"> </div>
+    <div class="answer jsText resultText"> </div>
+    <div class="answer error getError"> </div>
+  </div>
+</body>
+
+</html>

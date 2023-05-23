@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Api Node JS</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1 class="title-page">Сервис для генерации коротких ссылок</h1>
+
+
+    <blockquote>
+        <h2 class="blockquote-title">Для генерация короткой ссылки к json данным</h2>
+        <p class="blockquote-text"><b>Вам нужно передать данные в формате json на сервер </b></p>
+        <p class="blockquote-text">Например: <i>{"name":"Denis", "profession":"developer"}</i> в ответ возвращается уникальная ключ: <i>{id}</i>.</p>
+    </blockquote>
+
+    <label class="custom_label" for="json_data">Введите данные</label>
+    <textarea id="json_data" class="form-control json_data" rows="5"
+              placeholder='{"name":"Denis", "profession":"developer"}'></textarea>
+
+    <div class="command">
+        <div class="answer labelPost"></div>
+        <div class="answer IdText resultText"></div>
+        <div class="answer error postError"></div>
+        <button type="button" class="btn btn-success button post">Сгенерировать</button>
+    </div>
+
+    <blockquote class="callout quote EN">
+        <h2 class="blockquote-title">Получить JSON данные по id</h2>
+        <p class="blockquote-text">Проверяем, есть ли в базе с таким <i>{id}</i> данные, если есть то возвращается JSON.</p>
+    </blockquote>
+
+    <label class="custom_label" for="id">Введите <i>{id}</i> .</label><br>
+    <input class="form-control" type="text" placeholder="Введите id" id="id"><br>
+
+    <div class="command">
+        <div class="answer labelGet"></div>
+        <div class="answer jsText resultText"></div>
+        <div class="answer error getError"></div>
+        <button type="button" class="btn btn-success get button">Получить json данные по ID</button>
+    </div>
+</div>
+</body>
+
+</html>
